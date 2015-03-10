@@ -1,0 +1,53 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#lexicon-container {
+  margin: auto;
+  text-align: center;
+}
+
+.search-container {
+  margin-top: 100px;
+}
+
+.result-container {
+  margin: 50px auto;
+  width: 600px;
+}
+
+#search {
+  font-size: 15px;
+  padding: 5px 8px;
+  width: 280px;
+}
+
+
+.status, .ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-autocomplete {
+  border: 1px solid #ddd;
+  border-top: 0px;
+  font-family: Helvetica, san-serif;
+  list-style: none;
+  margin: 0px;
+  outline: none;
+  padding: 0px;
+  position: absolute;
+  z-index: 100;
+}
+
+.ui-autocomplete .ui-menu-item {
+  background-color: #fff;
+  outline: none;
+  margin: 0px;
+  position: relative;
+  padding: 5px 8px;
+}
+
+.ui-autocomplete .ui-state-focus {
+  background-color: #ddd;
+}
