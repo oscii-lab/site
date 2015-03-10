@@ -4,7 +4,7 @@ Oscii Lab
 The website for UC Berkeley's Oscii Lab: a research group focused on text
 representation and language processing.
 
-[http://oscii.org][]
+[oscii.org](http://oscii.org)
 
 Usage
 -----
