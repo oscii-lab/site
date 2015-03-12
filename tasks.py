@@ -2,7 +2,8 @@ from invoke import run, task
 import os
 import shutil
 
-published = 'published'
+published = 'static'
+port = 5000
 pages = 'pages'
 
 def templar(html, md, out):
@@ -31,10 +32,6 @@ def build():
 
 @task(build)
 def serve():
-    os.chdir(published)
-    run('python3 -m webbrowser -t "http://localhost:8000/"')
-    run('python3 -m http.server')
-
-@task(build)
-def deploy():
-    pass
+    run('python3 -m webbrowser -t "http://localhost:{}/"'.format(port))
+    import server
+    server.app.run(debug=True)

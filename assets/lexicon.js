@@ -44,8 +44,8 @@ function drawChart(links) {
     return [link.source, link.target, link.score];
   });
   var table = new google.visualization.DataTable();
-  table.addColumn('string', 'From');
-  table.addColumn('string', 'To');
+  table.addColumn('string', 'English');
+  table.addColumn('string', 'Spanish');
   table.addColumn('number', 'Weight');
   table.addRows(data);
   var options = {
@@ -69,17 +69,21 @@ function drawChart(links) {
   chart.draw(table, options);
 }
 
+function extensions(term, callback) {
+  $.getJSON('/translate/lexicon-extend', {
+    query: term,
+    source: 'en',
+    target: 'es'
+  }, function(response) {
+    callback(response.extensions);
+  });
+}
 
 $(document).ready(function() {
   $('#search').autocomplete({
-    source: [
-      'comet',
-      'dojo',
-      'galaxy',
-      'map',
-      'master',
-      'meteor'
-    ],
+    source: function(request, response) {
+      extensions(request.term, response);
+    },
     select: function(event, ui) {
       searchLexicon(ui.item.value);
     }
