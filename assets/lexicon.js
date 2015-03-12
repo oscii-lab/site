@@ -1,8 +1,10 @@
+var endpoint = 'http://beta.lilt.com/translate/lexicon';
+
 function searchLexicon(query) {
   var links = [];
   async.waterfall([
     function(callback) {
-      $.getJSON('/translate/lexicon', {
+      $.getJSON(endpoint, {
         query: query,
         source: 'en',
         target: 'es'
@@ -16,7 +18,7 @@ function searchLexicon(query) {
     },
     function(queries, callback) {
       async.map(queries, function(q, callback) {
-        $.getJSON('/translate/lexicon', {
+        $.getJSON(endpoint, {
           query: q,
           source: 'es',
           target: 'en'
@@ -69,21 +71,9 @@ function drawChart(links) {
   chart.draw(table, options);
 }
 
-function extensions(term, callback) {
-  $.getJSON('/translate/lexicon-extend', {
-    query: term,
-    source: 'en',
-    target: 'es'
-  }, function(response) {
-    callback(response.extensions);
-  });
-}
-
 $(document).ready(function() {
   $('#search').autocomplete({
-    source: function(request, response) {
-      extensions(request.term, response);
-    },
+    source: [],
     select: function(event, ui) {
       searchLexicon(ui.item.value);
     }
