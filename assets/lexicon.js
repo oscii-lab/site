@@ -1,13 +1,15 @@
-var endpoint = 'http://localhost:8080/translate/lexicon';
+var endpoint = 'http://104.197.10.176/translate/lexicon'
 
-function searchLexicon(query) {
+function retranslate(query) {
   var links = [];
   async.waterfall([
     function(callback) {
       $.getJSON(endpoint, {
         query: query,
         source: 'en',
-        target: 'es'
+        target: 'es',
+        translate: true,
+        minFrequency: .001
       }, function(response) {
         if (response.translations.length <= 0) return callback("No results");
         links = _.map(response.translations, function(translation) {
@@ -21,7 +23,9 @@ function searchLexicon(query) {
         $.getJSON(endpoint, {
           query: q,
           source: 'es',
-          target: 'en'
+          target: 'en',
+          translate: true,
+          minFrequency: .001
         }, function(response) {
           if (response.translations.length > 0) {
             _.each(response.translations, function(translation) {
@@ -71,14 +75,27 @@ function drawChart(links) {
   chart.draw(table, options);
 }
 
+function extend(query, callback) {
+  $.getJSON(endpoint, {
+        query: query,
+        source: 'en',
+        target: 'es',
+        extend: true
+      }, function(response) {
+        callback(response.extensions);
+      });
+}
+
 $(document).ready(function() {
   $('#search').autocomplete({
-    source: [],
+    source: function(request, response) {
+      extend(request.term, response);
+    },
     select: function(event, ui) {
-      searchLexicon(ui.item.value);
+      retranslate(ui.item.value);
     }
   });
   $('#search').on('keyup', function() {
-    searchLexicon($('#search').val());
+    retranslate($('#search').val());
   });
 });
