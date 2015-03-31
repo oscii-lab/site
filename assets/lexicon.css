@@ -9,11 +9,11 @@ body {
 }
 
 .search-container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .result-container {
-  margin: 50px auto;
+  margin: 10px auto 80px auto;
   width: 600px;
 }
 
@@ -22,7 +22,6 @@ body {
   padding: 5px 8px;
   width: 280px;
 }
-
 
 .status, .ui-helper-hidden-accessible {
   display: none;

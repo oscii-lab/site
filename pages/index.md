@@ -1,4 +1,4 @@
-~ title: UC Berkeley Oscii Lab
+~ title: Lexicon Demo
 
 <block styles>
 <link href="assets/lexicon.css" rel="stylesheet" media="screen">
@@ -7,7 +7,7 @@
 <block content>
 <div id='lexicon-container'>
     <div class='search-container'>
-      <input type="text" name="search" id="search" placeholder="Look up..." />
+      <input type="text" name="search" id="search" placeholder="Look up a word..." />
     </div>
     <div class='result-container'></div>
 </div>
