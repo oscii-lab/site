@@ -12,7 +12,7 @@ def templar(html, md, out):
 
 @task
 def clean():
-    patterns = [published]
+    patterns = [published + '/*.html', published + '/assets']
     for pattern in patterns:
         run('rm -rf %s' % pattern)
 
