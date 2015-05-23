@@ -122,7 +122,7 @@ header {
         .lex-source {
             color:rgba(255,255,255,0.5);
         }
-.lex-nav {
+.lex-nav,.page-bar {
     width:100%;
     height:100px;
     background-color:#23434F;
@@ -165,16 +165,52 @@ header {
 .page-header {
     margin:0;
     border:0;
-    padding:3em 0 8em 0;
+    padding:3em 0 6em 0;
 }
 .page-title {
     color:#FFF;
 }
+    .page-title.dark {
+        color:#333;
+    }
 .page-byline {
     color:rgba(255,255,255,0.5);
 }
     .page-logo {
         margin-top:6em;
+    }
+.page-bar {
+    text-align:center;
+    color:#FFF;
+    font-size:3em;
+}
+    .page-bar a {
+        opacity:0.5;
+        margin:0.75em 0;
+        display:inline-block;
+    }
+        .page-bar a:hover {
+            opacity:1;
+        }
+/* -- about page -- */
+.about-team {
+    background-color:#FFF;
+    padding:3em 0 6em 0;
+}
+.team-row {
+    padding:0 20%;
+    margin-top:1.5em;
+}
+.team-person {
+    display:inline-block;
+    padding:0 4.5%;
+}
+    .team-person-photo,.team-person-copy,.person-name,.person-title {
+        width:100%;
+        text-align:center;
+    }
+    .team-person-photo img {
+        display:inline-block;
     }
 /* -- page footer -- */
 footer {
