@@ -17,6 +17,7 @@ li {
 
 a,a:hover {
     text-decoration:inherit;
+    color:inherit;
 }
 
 .blue {
@@ -124,7 +125,7 @@ header {
     width:100%;
     height:100px;
     background-color:#23434F;
-    float:left;
+    padding:0;
 }
     .lex-nav ul,.lex-nav li {
         float:left;
@@ -158,4 +159,36 @@ header {
             text-align:center;
             display:inline-block;
             margin-right:0.75em;
+        }
+footer {
+    background-color:#333;
+    width:100%;
+    padding:5em 0;
+}
+    .footer-logo {
+        width:100%;
+        text-align:center;
+    }
+        .footer-logo img {
+            display:inline-block;
+            height:85px;
+        }
+    .footer-title {
+        width:100%;
+        color:#FFF;
+        font-family:'Baskerville';
+        text-align:center;
+        font-size:1.5em;
+        text-transform:uppercase;
+        margin:1em 0;
+    }
+    .footer-byline {
+        width:100%;
+        text-align:center;
+        color:rgba(255,255,255,0.25);
+        text-transform:uppercase;
+        font-size:0.9em;
+    }
+        .footer-byline a:hover {
+            color:#FFF;
         }
