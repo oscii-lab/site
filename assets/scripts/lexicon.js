@@ -89,34 +89,50 @@ function extend(query, callback) {
 $(document).ready(function() {
 
   var word = window.location.search.substr(1).split('=')[1];
-  $('#search').val(word);
-
-  var searchBox = $('#search');
-  searchBox.autocomplete({
-    source: function(request, response) {
-      extend(request.term, response);
-    },
-    select: function(event, ui) {
-      searchBox.autocomplete("close");
-      retranslate(ui.item.value);
-    }
-  });
-  searchBox.on('keyup', function() {
-    retranslate($('#search').val());
-  });
-  searchBox.keypress(function(e) {
-    if (e.which == 13) {
-      searchBox.autocomplete("close");
-    }
-  });
-  
-  if ($('#search').hasClass('index-input')) {
-    $('html').on('keyup', function(e) {
-        if (e.which == 13) {
-            $('form').submit();
-        }
+  if (word) {
+    retranslate(word);
+    $('#search').val(word);
+    showResults();
+  } else {
+    $('.index-input').keypress(function() {
+      showResults();
     });
   }
-  
-  retranslate(word);
+  autocomplete($('#search'));
 });
+
+function autocomplete(searchBox) {
+  searchBox.autocomplete({
+      source: function(request, response) {
+        extend(request.term, response);
+      },
+      select: function(event, ui) {
+        searchBox.autocomplete("close");
+        retranslate(ui.item.value);
+      }
+    });
+    searchBox.on('keyup', function() {
+      retranslate($('#search').val());
+    });
+    searchBox.keypress(function(e) {
+      if (e.which == 13) {
+        e.preventDefault()
+        searchBox.autocomplete("close");
+      }
+    });
+}
+
+function showResults() {
+  if ($('.index-input').val().length != 0) {
+    $('.lex-input').val($('.index-input').val());
+    $('.index-input').val('').blur();
+    $('.lex-input').focus();
+  }
+  if ($('.index').is(':visible')) {
+    $('.index').hide();
+    $('.lex').show();
+  }
+  if (!$('body').hasClass('dark')) {
+    $('body').addClass('dark blue');
+  }
+}
