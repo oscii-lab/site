@@ -60,3 +60,6 @@ published
 #IDE
 *.iml
 .idea/
+
+#Build
+static/

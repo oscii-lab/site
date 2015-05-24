@@ -1,16 +1,21 @@
+~ show: none
 ~ title: Lexicon Demo
+~ byline: none
 
 <block styles>
 <link href="assets/lexicon.css" rel="stylesheet" media="screen">
 </block styles>
 
 <block content>
-<div id='lexicon-container'>
-    <div class='search-container'>
-      <input type="text" name="search" id="search" placeholder="Look up a word..." />
-    </div>
+<section>
+    <div class="index-logo"><img src="assets/images/logo-blue.png"></div>
+    <h1 class="index-title">Oscii Lab</h1>
+    <form class="index-form">
+        <input class="index-input" id="search" >
+    </form>
+    <p class="index-byline">type in a word above, to learn more about words you thought you knew</p>
     <div class='result-container'></div>
-</div>
+</section>
 </block content>
 
 <block dependencies>
