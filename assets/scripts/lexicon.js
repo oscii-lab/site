@@ -110,5 +110,13 @@ $(document).ready(function() {
     }
   });
   
+  if ($('#search').hasClass('index-input')) {
+    $('html').on('keyup', function(e) {
+        if (e.which == 13) {
+            $('form').submit();
+        }
+    });
+  }
+  
   retranslate(word);
 });
