@@ -87,6 +87,10 @@ function extend(query, callback) {
 }
 
 $(document).ready(function() {
+
+  var word = window.location.search.substr(1).split('=')[1];
+  $('#search').val(word);
+
   var searchBox = $('#search');
   searchBox.autocomplete({
     source: function(request, response) {
@@ -105,4 +109,6 @@ $(document).ready(function() {
       searchBox.autocomplete("close");
     }
   });
+  
+  retranslate(word);
 });

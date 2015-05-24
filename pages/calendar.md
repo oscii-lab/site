@@ -1,6 +1,7 @@
 ~ show: block
 ~ title: Events
 ~ byline: presentations and other public receptions
+~ body: dark blue
 
 <block styles>
 </block styles>

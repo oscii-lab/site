@@ -1,6 +1,7 @@
 ~ show: block
 ~ title: Software
 ~ byline: lab productions
+~ body: dark blue
 
 <block styles>
 </block styles>

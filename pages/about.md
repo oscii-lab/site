@@ -1,6 +1,7 @@
 ~ show: block
 ~ title: About Oscii Lab
 ~ byline: a UC Berkeley research group focused on text representation and language processing
+~ body: dark blue
 
 <block styles>
 </block styles>

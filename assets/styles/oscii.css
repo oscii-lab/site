@@ -101,6 +101,7 @@ header {
 /* -- lexicon -- */
 .lex-header {
     padding:3.5em 0;
+    background-color:#467B8D;
 }
     .lex-logo {
         text-align:right;

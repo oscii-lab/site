@@ -1,6 +1,7 @@
 ~ show: block
 ~ title: Joining the Oscii Lab
 ~ byline: the application process
+~ body: dark blue
 
 <block styles>
 </block styles>
