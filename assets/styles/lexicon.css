@@ -17,11 +17,11 @@ body {
   width: 600px;
 }
 
-#search {
+/*#search {
   font-size: 15px;
   padding: 5px 8px;
   width: 280px;
-}
+}*/
 
 .status, .ui-helper-hidden-accessible {
   display: none;

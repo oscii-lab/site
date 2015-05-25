@@ -56,3 +56,10 @@ docs/_build/
 published
 .idea
 .DS_Store
+
+#IDE
+*.iml
+.idea/
+
+#Build
+static/

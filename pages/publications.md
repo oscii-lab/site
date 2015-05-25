@@ -1,10 +1,12 @@
+~ show: block
 ~ title: Publications
+~ byline: coming soon
+~ body: dark blue
 
 <block styles>
 </block styles>
 
 <block content>
-Coming soon...
 </block content>
 
 <block dependencies>
