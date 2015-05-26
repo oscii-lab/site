@@ -94,7 +94,7 @@ $(document).ready(function() {
     $('#search').val(word);
     showResults();
   } else {
-    $('.index-input').keypress(function() {
+    $('.index-input').keyup(function() {
       showResults();
     });
   }
@@ -123,16 +123,17 @@ function autocomplete(searchBox) {
 }
 
 function showResults() {
-  if ($('.index-input').val().length != 0) {
-    $('.lex-input').val($('.index-input').val());
-    $('.index-input').val('').blur();
-    $('.lex-input').focus();
-  }
   if ($('.index').is(':visible')) {
     $('.index').hide();
     $('.lex').show();
   }
   if (!$('body').hasClass('dark')) {
     $('body').addClass('dark blue');
+  }
+  if ($('.index-input').val().length != 0) {
+    content = $('.index-input').val();
+    $('.index-input').val('').blur();
+    $('.lex-input').focus();
+    $('.lex-input').val(content);
   }
 }
