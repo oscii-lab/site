@@ -11,14 +11,9 @@
     <a href="http://github.com/oscii-lab"><i class="fa fa-github"></i></a>
 </div>
 <section class="page-content col-md-12">
-##Team
+##People
 
-###[John DeNero](http://denero.org)
-former research scientist at Google (2010-2014), joined the UC Berkeley EECS faculty in August 2014
-
-###Current Students
-- [Alvin Wan](http://alvinwan.com)
-- [Andre Haas](http://andrehaas.com)
+- [John DeNero](http://denero.org)
 
 </section>
 </block content>

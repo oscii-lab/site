@@ -14,13 +14,12 @@
     <form class="index-form">
         <input class="index-input" name="word">
     </form>
-    <p class="index-byline">type in a word above, to learn more about words you thought you knew</p>
+    <p class="index-byline">Look up a word or phrase</p>
 </section>
 <section class="lex lex-header col-md-12" style="display:none">
 <div class="lex-logo col-md-3"><img src="assets/images/logo-blue-white.png"></div>
 <form class="lex-form col-md-8">
     <input class="lex-input" placeholder="search term" value="" id="search" name="word">
-    <!--<p class="lex-byline col-md-12">(n.) One who commands, leads, or guides others, especially <span class="lex-source">- duckduckgo.com</span></p>-->
 </form>
 </section>
 <!--<nav class="lex lex-nav col-md-12" style="display:none">
