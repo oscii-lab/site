@@ -131,8 +131,9 @@ function showResults() {
     $('body').addClass('dark blue');
   }
   if ($('.index-input').val().length != 0) {
-    $('.lex-input').val($('.index-input').val());
+    content = $('.index-input').val();
     $('.index-input').val('').blur();
     $('.lex-input').focus();
+    $('.lex-input').val(content);
   }
 }
