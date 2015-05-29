@@ -82,7 +82,7 @@ function drawChart(links) {
 function extend(query, callback) {
   var request = {query: query, source: 'en', target: 'es', extend: true, maxCount: 6}
   $.getJSON(endpoint, request, function(response) {
-    callback(response.extensions);
+    callback(_.map(response.extensions, function(t) { return t.source; }));
   });
 }
 
